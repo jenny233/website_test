@@ -1,4 +1,158 @@
-<head></head>
-<body>
-    <h3>Hello</h3>
-</body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Molecule Builder</title>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- JavaScript Library -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<!-- Viewport setting -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Fabric JS -->
+		<script src="fabric.min.js"></script>
+		
+		<!-- My JS and CSS files -->
+		<script src="molecule_script.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		
+	</head>
+	
+	<body>
+		<div class="container-fluid">
+			<nav class="navbar">
+				<ul class="nav navbar-nav nav-pills" role="tablist">
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="row">
+				
+				<!-- Here goes the selection side bar -->
+				<div class="col-sm-3 sidebar">
+					<p>Selection side bar</p>
+					
+					<label for="elementSelect">Select an element</label>
+					<select class="form-control" id="elementSelect">
+						<option value="H">H</option>
+						<option value="C">C</option>
+						<option value="O">O</option>
+						<option value="S">S</option>
+					</select>
+					
+					<label for="bond-select">Select bond order</label>
+					<select class="form-control" id="bondSelect">
+						<option selected value=1>Single bond</option>
+						<option value=2>Double bond</option>
+						<option value=3>Triple bond</option>
+						<option value=-1>Other</option>
+					</select>
+					<input type="text" class="form-control hidden" id="boInput"
+					placeholder="Enter bond order...">
+					
+					<button id="atombtn" class="btn btn-primary">Create atom</button>
+				</div>
+				
+				
+				<!-- Here goes the canvases -->
+				<div class="col-sm-6 midbar">
+					
+					<!-- 2D canvas -->
+					<div class="row">
+						<p>2D Canvas</p>
+						<canvas id="canvas" width="100%" height="200"></canvas>
+						<script>
+							var fabric_canvas = new fabric.Canvas('canvas');
+						</script>
+					</div>
+					
+					<!-- 3D Model -->
+					<div class="row">
+						<p>3D Canvas</p>
+					</div>
+				</div>
+				
+				
+				<!-- Here goes the properties side bar -->
+				<div class="col-sm-3 sidebar propSidebar">
+					<div class="row">
+						<nav class="navbar" id="propNav">
+							<ul class="nav navbar-nav nav-pills" role="tablist">
+							    <li class="active"><a href="#section1">Neighbors</a></li>
+								<li><a href="#section2">Factor</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="row" id="prop" style="height:300px; overflow-y:scroll;"
+					     data-spy="scroll" data-target="#propNav">
+						<section id="section1">
+							<h4>Bonded atoms</h4>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+						</section>
+						<section id="section2">
+							<h4>Isotopic factor</h4>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+							<p>hjkdlfsa jklasfjkdas;fjkl</p>
+						</section>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>
